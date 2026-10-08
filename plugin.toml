@@ -1,0 +1,15 @@
+schema = 1
+id = "ternmeon"
+name = "TernMeOn"
+version = "0.1.0"
+description = "Control Buttplug.io devices through Intiface Central, and feel long commands finish."
+icon = "vibrate"
+host = "host.luau"
+window = "window.luau"
+styles = ["ternmeon.css"]
+
+[[blocks]]
+id = "control"
+title = "TernMeOn Studio"
+# The window half's "Open TernMeOn controls" command opens it.
+palette = false

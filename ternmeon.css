@@ -1,0 +1,59 @@
+/* TernMeOn Studio. Restraint: neutral theme colours everywhere; the warm gradient (magenta -> coral -> amber) lives
+   in the SVG blobs and appears here only on the wordmark, the selection glow and the active slot's underline. */
+
+.sf-main[data-surface='plugin.ternmeon.control'] .sf-image svg { width: 100%; height: auto; display: block; }
+
+/* header */
+.sf-main[data-surface='plugin.ternmeon.control'] .tmo-head { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; padding: 4px 2px 6px; }
+.sf-main[data-surface='plugin.ternmeon.control'] .tmo-mark {
+	font-size: 17px; font-weight: 600; letter-spacing: -.01em;
+	background: linear-gradient(90deg, #ff2d78, #ff6a3d 55%, #ffbe3b); -webkit-background-clip: text; background-clip: text; color: transparent;
+}
+
+/* an output: arc, numerals, steppers */
+.sf-main[data-surface='plugin.ternmeon.control'] .tmo-ctl { display: flex; align-items: center; gap: 18px; padding: 10px 14px; border-radius: 16px; cursor: pointer; }
+.sf-main[data-surface='plugin.ternmeon.control'] .tmo-ctl > .sf-image { flex: none; width: 124px; }
+.sf-main[data-surface='plugin.ternmeon.control'] .tmo-ctl[data-mark='sel'] {
+	background: rgba(255, 106, 61, .04); box-shadow: inset 0 0 0 1px rgba(255, 106, 61, .28), 0 0 24px -12px rgba(255, 90, 60, .5);
+}
+.sf-main[data-surface='plugin.ternmeon.control'] .tmo-info { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 4px; }
+.sf-main[data-surface='plugin.ternmeon.control'] .tmo-big { font-size: 34px; font-weight: 600; line-height: 1; letter-spacing: -.02em; }
+.sf-main[data-surface='plugin.ternmeon.control'] .tmo-of { font-size: 14px; font-weight: 400; color: var(--t3); margin-left: 3px; letter-spacing: 0; }
+.sf-main[data-surface='plugin.ternmeon.control'] .tmo-cap { font-size: 12px; color: var(--t3); }
+.sf-main[data-surface='plugin.ternmeon.control'] .tmo-step { display: flex; gap: 2px; }
+.sf-main[data-surface='plugin.ternmeon.control'] .tmo-step .tmo-ghost { font-size: 22px; line-height: 1; padding: 4px 10px; }
+
+/* ghost buttons: glyphs and words with no chrome */
+.sf-main[data-surface='plugin.ternmeon.control'] .tmo-ghost {
+	font: inherit; font-size: 13px; color: var(--t3); background: none; border: 0; border-radius: 8px; padding: 2px 9px; cursor: pointer;
+}
+.sf-main[data-surface='plugin.ternmeon.control'] .tmo-ghost:hover { color: var(--t1); background: var(--l1); }
+.sf-main[data-surface='plugin.ternmeon.control'] .tmo-ghost[data-mark='on'] {
+	color: var(--t1); background: linear-gradient(90deg, #ff2d78, #ffbe3b) bottom / calc(100% - 18px) 2px no-repeat; border-radius: 0;
+}
+.sf-main[data-surface='plugin.ternmeon.control'] .tmo-slots { display: flex; align-items: center; gap: 4px; padding: 2px 0; }
+.sf-main[data-surface='plugin.ternmeon.control'] .tmo-slots > .sf-text { margin-left: auto; font-size: 12px; }
+
+/* the editor glows softly when it has the keys; the playhead bar stands out */
+.sf-main[data-surface='plugin.ternmeon.control'] .sf-editor.focused { box-shadow: 0 0 0 1px rgba(255, 106, 61, .5), 0 0 20px -8px rgba(255, 90, 60, .6); }
+.sf-main[data-surface='plugin.ternmeon.control'] .tmo-bar { opacity: .8; }
+.sf-main[data-surface='plugin.ternmeon.control'] .tmo-cur { opacity: 1; }
+
+/* dock: one quiet line */
+.sf-dock[data-surface='plugin.ternmeon.control'] .tmo-dock { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 16px; font-size: 12px; }
+.sf-dock[data-surface='plugin.ternmeon.control'] .tmo-dock .sf-row { gap: 6px; }
+
+/* rings around the selected output, softly */
+.sf-main[data-surface='plugin.ternmeon.control'] .tmo-ring { transform-origin: 70px 70px; opacity: .7; }
+.sf-main[data-surface='plugin.ternmeon.control'] .tmo-r2 { animation-delay: .35s; }
+.sf-main[data-surface='plugin.ternmeon.control'] .tmo-l1 .tmo-ring { animation: tmo-ring 3.2s ease-out infinite; }
+.sf-main[data-surface='plugin.ternmeon.control'] .tmo-l2 .tmo-ring { animation: tmo-ring 2.4s ease-out infinite; }
+.sf-main[data-surface='plugin.ternmeon.control'] .tmo-l3 .tmo-ring { animation: tmo-ring 1.7s ease-out infinite; }
+.sf-main[data-surface='plugin.ternmeon.control'] .tmo-l4 .tmo-ring { animation: tmo-ring 1.1s ease-out infinite; }
+.sf-main[data-surface='plugin.ternmeon.control'] .tmo-l5 .tmo-ring { animation: tmo-ring .7s ease-out infinite; }
+@keyframes tmo-ring { from { transform: scale(.88); opacity: .6; } to { transform: scale(1.12); opacity: 0; } }
+
+.sf-main[data-surface='plugin.ternmeon.control'].sf-still .tmo-ring,
+.sf-still .sf-main[data-surface='plugin.ternmeon.control'] .tmo-ring { animation: none; }
+.sf-main[data-surface='plugin.ternmeon.control'].sf-paused .tmo-ring,
+.sf-paused .sf-main[data-surface='plugin.ternmeon.control'] .tmo-ring { animation-play-state: paused; }
