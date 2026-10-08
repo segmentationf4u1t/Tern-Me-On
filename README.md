@@ -3,7 +3,7 @@
 </p>
 
 <p align="center">
-  Control <a href="https://buttplug.io/docs/spec">Buttplug</a> devices from the Tern terminal,<br>
+  Control <a href="https://buttplug.io/docs/spec">Buttplug</a> devices from the Tern app,<br>
   write haptic patterns as code, and feel your long commands finish.
 </p>
 
